@@ -1,0 +1,28 @@
+{
+  "name": "Project Kisan - AI Agricultural Assistant",
+  "short_name": "Project Kisan",
+  "description": "AI-Powered Agricultural Assistant for Farmers",
+  "theme_color": "#22C55E",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["agriculture", "productivity", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}

@@ -1,8 +1,4 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInAnonymously } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
-// Demo Firebase configuration for development
+// Demo Firebase configuration for web development
 const firebaseConfig = {
   apiKey: "demo-key",
   authDomain: "demo.firebaseapp.com",
@@ -12,27 +8,27 @@ const firebaseConfig = {
   appId: "demo-app-id"
 };
 
-const appId = 'demo-app';
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-
-// Authentication helper - use anonymous auth for demo
+// Mock authentication for demo purposes
 export const authenticateUser = async () => {
   try {
-    // Sign in anonymously for demo purposes
-    const userCredential = await signInAnonymously(auth);
-    return userCredential.user;
-  } catch (error) {
-    console.error('Authentication error:', error);
-    // Return a mock user for demo purposes if auth fails
+    // Simulate authentication delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Return a mock user for demo purposes
     return {
       uid: 'demo-user-' + Math.random().toString(36).substr(2, 9),
-      isAnonymous: true
+      isAnonymous: true,
+      email: null
+    };
+  } catch (error) {
+    console.error('Authentication error:', error);
+    // Return a fallback user
+    return {
+      uid: 'demo-user-fallback',
+      isAnonymous: true,
+      email: null
     };
   }
 };
 
-export { appId };
+export { firebaseConfig };

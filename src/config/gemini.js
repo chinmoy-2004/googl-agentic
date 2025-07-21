@@ -70,30 +70,29 @@ const simulateGeminiResponse = async (prompt, imageBase64) => {
   // Disease diagnosis responses
   if (imageBase64 || lowerPrompt.includes('disease') || lowerPrompt.includes('leaf') || lowerPrompt.includes('plant')) {
     const diseases = [
-      "Septoria Leaf Spot detected. Apply Neem Oil spray every 7 days. Remove affected leaves and ensure proper drainage.",
-      "Early Blight identified. Use Copper-based fungicide. Improve air circulation and avoid overhead watering.",
-      "Powdery Mildew found. Apply Baking Soda solution (1 tsp per liter). Increase sunlight exposure.",
-      "Bacterial Leaf Spot detected. Remove infected parts immediately. Apply Copper Hydroxide spray.",
-      "Healthy plant detected! Continue current care routine. Monitor for any changes."
+      "🔍 **Septoria Leaf Spot Detected**\n\n**Severity:** Moderate\n\n**Treatment:**\n• Apply Neem Oil spray every 7 days\n• Remove affected leaves immediately\n• Ensure proper drainage\n• Avoid overhead watering\n\n**Prevention:** Maintain good air circulation and crop rotation.",
+      "🔍 **Early Blight Identified**\n\n**Severity:** High\n\n**Treatment:**\n• Use Copper-based fungicide immediately\n• Improve air circulation around plants\n• Remove infected plant debris\n• Apply preventive sprays weekly\n\n**Prevention:** Avoid overhead irrigation and ensure proper spacing.",
+      "🔍 **Powdery Mildew Found**\n\n**Severity:** Low\n\n**Treatment:**\n• Apply Baking Soda solution (1 tsp per liter)\n• Increase sunlight exposure\n• Improve air circulation\n• Remove affected leaves\n\n**Prevention:** Avoid overcrowding and maintain proper humidity levels.",
+      "✅ **Healthy Plant Detected!**\n\n**Status:** Excellent condition\n\n**Recommendations:**\n• Continue current care routine\n• Monitor for any changes\n• Maintain regular watering schedule\n• Consider preventive treatments during monsoon\n\n**Next Check:** Schedule in 2 weeks"
     ];
     return diseases[Math.floor(Math.random() * diseases.length)];
   }
 
   // Market price responses
   if (lowerPrompt.includes('price') || lowerPrompt.includes('market') || lowerPrompt.includes('sell')) {
-    return `Current market analysis: Tomato prices are ₹45/kg (+7% from yesterday). Recommendation: Sell 45% today at ₹23-25/kg, 30% tomorrow at ₹22-25/kg. Store unripe ones due to predicted hailstorm. Need storage advice? Just ask!`;
+    return `📈 **Current Market Analysis**\n\n**Tomato Prices:** ₹45/kg (+7% from yesterday)\n\n**Recommendation:**\n• Sell 45% today at ₹23-25/kg\n• Sell 30% tomorrow at ₹22-25/kg\n• Store unripe ones due to predicted hailstorm\n\n**Market Outlook:** Prices expected to rise 15% next week due to supply shortage.\n\n💡 Need storage advice? Just ask!`;
   }
 
   // Government scheme responses
   if (lowerPrompt.includes('scheme') || lowerPrompt.includes('subsidy') || lowerPrompt.includes('government')) {
-    return `Based on your profile, you're eligible for PM-KISAN (₹6000/year), Crop Insurance, and Seed Subsidy. For PM-KISAN: Visit nearest CSC with Aadhaar, bank details, and land documents. Application deadline: March 31st.`;
+    return `🏛️ **Government Schemes for You**\n\n**Eligible Schemes:**\n• PM-KISAN: ₹6000/year direct benefit\n• Crop Insurance: Up to ₹2,00,000 coverage\n• Seed Subsidy: 50% off certified seeds\n\n**Quick Action - PM-KISAN:**\n1. Visit nearest CSC center\n2. Bring: Aadhaar, bank details, land documents\n3. Application deadline: March 31st\n\n**Status:** You can apply immediately!`;
   }
 
   // Crop calendar responses
   if (lowerPrompt.includes('sow') || lowerPrompt.includes('plant') || lowerPrompt.includes('harvest') || lowerPrompt.includes('when')) {
-    return `For your location, optimal sowing window for Wheat: Nov 15-30, Harvest: April. Rice: Sow Jun 1-15, Harvest: October. Brinjal: Sow year-round, best in Feb-Mar and Jun-Jul. Consider soil temperature and moisture levels.`;
+    return `📅 **Optimal Crop Calendar**\n\n**For Your Location:**\n\n**Wheat:**\n• Sowing: Nov 15-30 (Best time: Nov 20-25)\n• Harvest: April\n\n**Rice:**\n• Sowing: Jun 1-15\n• Harvest: October\n\n**Brinjal:**\n• Year-round cultivation possible\n• Best seasons: Feb-Mar and Jun-Jul\n\n⚠️ **Important:** Consider soil temperature (18-25°C) and moisture levels before sowing.`;
   }
 
   // General farming advice
-  return `I'm here to help with your farming needs! You can ask me about crop diseases, market prices, government schemes, sowing schedules, or any other agricultural questions. How can I assist you today?`;
+  return `🌱 **AI Agricultural Assistant**\n\nI'm here to help with your farming needs! You can ask me about:\n\n• 🔍 Crop disease diagnosis\n• 💰 Market prices and selling advice\n• 🏛️ Government schemes and subsidies\n• 📅 Sowing and harvesting schedules\n• 🌦️ Weather-based farming tips\n• 💡 General agricultural guidance\n\nHow can I assist you today?`;
 };

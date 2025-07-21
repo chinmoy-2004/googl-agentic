@@ -1,14 +1,5 @@
-// Demo Firebase configuration for web development
-const firebaseConfig = {
-  apiKey: "demo-key",
-  authDomain: "demo.firebaseapp.com",
-  projectId: "demo-project",
-  storageBucket: "demo-project.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "demo-app-id"
-};
-
-// Mock authentication for demo purposes
+// Mock Firebase configuration for demo purposes
+// This prevents authentication errors while maintaining functionality
 export const authenticateUser = async () => {
   try {
     // Simulate authentication delay
@@ -31,4 +22,5 @@ export const authenticateUser = async () => {
   }
 };
 
-export { firebaseConfig };
+// Mock Firebase config - not actually used to prevent auth errors
+export const firebaseConfig = null;

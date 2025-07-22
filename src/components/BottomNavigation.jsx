@@ -1,10 +1,11 @@
 import React from 'react';
 import { Leaf, Users, ShoppingBag, User } from 'lucide-react';
-import { useApp } from '../contexts/AppContext';
-import { getTranslation } from '../utils/translations';
+import { useApp } from '../contexts/AppContext.jsx';
+import { getTranslation } from '../utils/translations.js';
 
 const BottomNavigation = ({ activeTab, onTabPress }) => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English' };
   
   const tabs = [
     { id: 'home', labelKey: 'yourCrops', icon: Leaf },

@@ -1,10 +1,11 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
-import { useApp } from '../contexts/AppContext';
-import { getTranslation } from '../utils/translations';
+import { useApp } from '../contexts/AppContext.jsx';
+import { getTranslation } from '../utils/translations.js';
 
 const PlaceholderScreen = ({ title, onBack }) => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English' };
   
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">

@@ -1,10 +1,15 @@
 import React from 'react';
 import { Leaf, Plus, Camera, FileText, Pill, Cloud, MessageCircle, MoreHorizontal, Calendar, Building2, ShoppingBag } from 'lucide-react';
-import { useApp } from '../../contexts/AppContext';
-import { getTranslation } from '../../utils/translations';
+import { useApp } from '../../contexts/AppContext.jsx';
+import { getTranslation } from '../../utils/translations.js';
 
 const HomeScreen = ({ onNavigate }) => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { 
+    selectedLanguage: 'English', 
+    selectedCrops: [],
+    user: { uid: 'demo-user' }
+  };
   const selectedCrops = state.selectedCrops.slice(0, 5);
 
   const quickActions = [

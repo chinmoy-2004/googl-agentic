@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { Camera, ArrowLeft, Upload, X, AlertCircle } from 'lucide-react';
-import { callGeminiAPI } from '../config/gemini';
-import { useApp } from '../contexts/AppContext';
-import { getTranslation } from '../utils/translations';
-import { saveToIndexedDB } from '../utils/indexedDB';
+import { callGeminiAPI } from '../config/gemini.js';
+import { useApp } from '../contexts/AppContext.jsx';
+import { getTranslation } from '../utils/translations.js';
+import { saveToIndexedDB } from '../utils/indexedDB.js';
 
 const CropHealthScreen = ({ onBack }) => {
-  const { state, dispatch } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English', isOnline: true };
+  const dispatch = context?.dispatch || (() => {});
   const [selectedImage, setSelectedImage] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [diagnosis, setDiagnosis] = useState('');

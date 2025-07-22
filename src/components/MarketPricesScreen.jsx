@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, TrendingUp, TrendingDown, ChevronDown, RefreshCw } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
-import { callGeminiAPI } from '../config/gemini';
-import { useApp } from '../contexts/AppContext';
-import { getTranslation } from '../utils/translations';
+import { callGeminiAPI } from '../config/gemini.js';
+import { useApp } from '../contexts/AppContext.jsx';
+import { getTranslation } from '../utils/translations.js';
 
 const crops = [
   { id: 'tomato', nameKey: 'tomato', emoji: '🍅' },
@@ -15,7 +15,8 @@ const crops = [
 ];
 
 const MarketPricesScreen = ({ onBack }) => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English', isOnline: true };
   const [selectedCrop, setSelectedCrop] = useState(crops[0]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [priceData, setPriceData] = useState(null);

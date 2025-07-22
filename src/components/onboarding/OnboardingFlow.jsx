@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useApp } from '../../contexts/AppContext';
+import { useApp } from '../../contexts/AppContext.jsx';
 import LanguageSelection from './LanguageSelection';
 import FeatureWalkthrough from './FeatureWalkthrough';
 import PermissionRequest from './PermissionRequest';
@@ -7,7 +7,8 @@ import FarmingTypeSelection from './FarmingTypeSelection';
 import CropSelection from './CropSelection';
 
 const OnboardingFlow = () => {
-  const { dispatch } = useApp();
+  const context = useApp();
+  const dispatch = context?.dispatch || (() => {});
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {

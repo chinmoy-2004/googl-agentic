@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Mic, Send, ArrowLeft, Globe, Volume2 } from 'lucide-react';
-import { callGeminiAPI } from '../config/gemini';
-import { useApp } from '../contexts/AppContext';
-import { getTranslation } from '../utils/translations';
-import { useSpeechRecognition, useSpeechSynthesis } from '../hooks/useSpeechAPI';
+import { callGeminiAPI } from '../config/gemini.js';
+import { useApp } from '../contexts/AppContext.jsx';
+import { getTranslation } from '../utils/translations.js';
+import { useSpeechRecognition, useSpeechSynthesis } from '../hooks/useSpeechAPI.js';
 
 const VoiceInputScreen = ({ onBack }) => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English' };
   const [inputText, setInputText] = useState('');
   const [response, setResponse] = useState('');
   const [isLoading, setIsLoading] = useState(false);

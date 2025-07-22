@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Leaf } from 'lucide-react';
-import { useApp } from '../../contexts/AppContext';
-import { getTranslation } from '../../utils/translations';
+import { useApp } from '../../contexts/AppContext.jsx';
+import { getTranslation } from '../../utils/translations.js';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -16,7 +16,9 @@ const languages = [
 ];
 
 const LanguageSelection = ({ onNext }) => {
-  const { state, dispatch } = useApp();
+  const context = useApp();
+  const state = context?.state || { selectedLanguage: 'English' };
+  const dispatch = context?.dispatch || (() => {});
   const [selectedLanguage, setSelectedLanguage] = useState(state.selectedLanguage);
 
   const handleAccept = () => {

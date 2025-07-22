@@ -1,11 +1,7 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
-import { useApp } from '../contexts/AppContext.jsx';
-import { getTranslation } from '../utils/translations';
 
 const SplashScreen = () => {
-  const { state } = useApp();
-  
   return (
     <div className="min-h-screen bg-white flex flex-col justify-center items-center px-5">
       <div className="flex flex-col items-center mb-12">
@@ -13,10 +9,10 @@ const SplashScreen = () => {
           <Leaf size={48} className="text-primary-500" />
         </div>
         <h1 className="text-3xl font-bold text-gray-800 text-center mb-2">
-          {getTranslation(state.selectedLanguage, 'appTitle')}
+          Project Kisan
         </h1>
         <p className="text-base text-gray-600 text-center">
-          {getTranslation(state.selectedLanguage, 'appSubtitle')}
+          AI-Powered Agricultural Assistant
         </p>
       </div>
       

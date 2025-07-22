@@ -1,6 +1,6 @@
 import React from 'react';
 import { Leaf } from 'lucide-react';
-import { useApp } from '../contexts/AppContext';
+import { useApp } from '../contexts/AppContext.jsx';
 import { getTranslation } from '../utils/translations';
 
 const SplashScreen = () => {

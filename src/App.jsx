@@ -13,7 +13,13 @@ import BottomNavigation from './components/BottomNavigation';
 import OfflineIndicator from './components/OfflineIndicator';
 
 const AppContent = () => {
-  const { state } = useApp();
+  const context = useApp();
+  const state = context?.state || { 
+    loading: false, 
+    currentScreen: 'home', 
+    onboardingCompleted: true,
+    selectedLanguage: 'English'
+  };
   const [currentScreen, setCurrentScreen] = useState('home');
   const [activeTab, setActiveTab] = useState('home');
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, Plus, Camera, FileText, Pill, Cloud, MessageCircle, MoreHorizontal, Calendar, Building2 } from 'lucide-react';
+import { Leaf, Plus, Camera, FileText, Pill, Cloud, MessageCircle, MoreHorizontal, Calendar, Building2, ShoppingBag } from 'lucide-react';
 import { useApp } from '../../contexts/AppContext';
 import { getTranslation } from '../../utils/translations';
 
